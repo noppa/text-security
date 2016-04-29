@@ -22,10 +22,11 @@
     "url": "https://github.com/noppa/text-security/issues"
   },
   "homepage": "https://github.com/noppa/text-security#readme",
-  "dev-dependencies": {
+  "devDependencies": {
     "svg2ttf": "4.0.0",
     "svgicons2svgfont": "5.0.0",
     "ttf2eot": "2.0.0",
-    "ttf2woff": "2.0.1"
+    "ttf2woff": "2.0.1",
+    "yargs": "4.6.0"
   }
 }
