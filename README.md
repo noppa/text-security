@@ -6,11 +6,8 @@ What?
 This is a simple set of fonts that only consists of 3 different characters.
 Disc <img src="https://cdn.rawgit.com/noppa/text-security/master/assets/disc.svg" width="5px">
 circle <img src="https://cdn.rawgit.com/noppa/text-security/master/assets/circle.svg" width="10px">
-and square <img src="https://cdn.rawgit.com/noppa/text-security/master/assets/square.svg" width="10px">
-
-For example, setting `font-family: "text-security-circle"` for an element
- should then display all the element's characters in concealed way, like
- it was an password field.
+and square <img src="https://cdn.rawgit.com/noppa/text-security/master/assets/square.svg" width="10px"> For example, setting `font-family: "text-security-circle"` for an element
+should then display all the element's characters in concealed way, like it was an password field.
 
 
 
@@ -47,8 +44,10 @@ For example, setting `font-family: "text-security-circle"` for an element
 
 
 
- ####I can't believe it!
+ I can't believe it!
+ ------
  *demo.html* contains a proof-of-concept demo file, which you can just open in any browser.
+ The same thing can also be found [as a fiddle](https://jsfiddle.net/nobba/ct5hw1qr/).
 
 
 
