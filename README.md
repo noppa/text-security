@@ -1,7 +1,7 @@
 # text-security
 Cross-browser alternative to `-webkit-text-security`
 
-**What?**
+What?
 ------
 This is a simple set of fonts that only consists of 3 different characters.
 Disc <img src="https://cdn.rawgit.com/noppa/text-security/master/assets/disc.svg" width="5px">
