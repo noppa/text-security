@@ -7,13 +7,13 @@ This is a simple set of fonts that only consists of 3 different characters.
 Disc <img src="https://cdn.rawgit.com/noppa/text-security/master/assets/disc.svg" width="5px">
 circle <img src="https://cdn.rawgit.com/noppa/text-security/master/assets/circle.svg" width="10px">
 and square <img src="https://cdn.rawgit.com/noppa/text-security/master/assets/square.svg" width="10px"> For example, setting `font-family: "text-security-circle"` for an element
-should then display all the element's characters in concealed way, like it was an password field.
+should then display all the element's characters in a concealed way, like it was a password field.
 
 
 
  **Why?**
  ------
- In case you wan't to get the benefits of `input[type="password"]` but also
+ In case you want to get the benefits of `input[type="password"]` but also
  combine that with other element types, like `input[type="tel"]`.
 
 
@@ -23,7 +23,7 @@ should then display all the element's characters in concealed way, like it was a
  ------
  You can use the fonts by adding this repo as a dependency and including the *dist/text-security.css* in your project, like so
 
- `<link rel="stylesheet" type="text/css" href="node_modules/text-scurity/dist/text-security.css">`
+ `<link rel="stylesheet" type="text/css" href="node_modules/text-security/dist/text-security.css">`
 
 
 
