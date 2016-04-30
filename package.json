@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "",
+    "prebuild": "npm install",
     "build": "node index.js"
   },
   "repository": {
