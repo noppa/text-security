@@ -47,7 +47,7 @@ should then display all the element's characters in concealed way, like it was a
  **I can't believe it!**
  ------
  *demo.html* contains a proof-of-concept demo file, which you can just open in any browser.
- The same thing can also be found [as a fiddle](https://jsfiddle.net/449Lamue/).
+ The same thing can also be found [as a fiddle](https://jsfiddle.net/449Lamue/2/).
 In development, you can also try out the library by just including the css using RawGit
 `<link rel="stylesheet" type="text/css" href="https://rawgit.com/noppa/text-security/master/dist/text-security.css">`
 
