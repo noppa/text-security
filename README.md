@@ -23,7 +23,7 @@ should then display all the element's characters in concealed way, like it was a
  ------
  You can use the fonts by adding this repo as a dependency and including the *dist/text-security.css* in your project, like so
 
- ```<link rel="stylesheet" type="text/css" href="node_modules/text-scurity/dist/text-security.css">```
+ `<link rel="stylesheet" type="text/css" href="node_modules/text-scurity/dist/text-security.css">`
 
 
 
@@ -31,7 +31,7 @@ should then display all the element's characters in concealed way, like it was a
  **But what if...?**
  ------
  If you want to make your own tweaks, the `npm run build` command has two optional arguments for you.
- By default, 768 different unicode characters are included in the fonts, making it reliable for different use-cases,
+ By default, 768 different unicode characters are included in the fonts, making it reliable for different use-cases
  but also adding quite a big font files as a dependency. You can use the `--max={number}` option to
  reduce the amount of included unicode characters.
 
@@ -47,8 +47,9 @@ should then display all the element's characters in concealed way, like it was a
  **I can't believe it!**
  ------
  *demo.html* contains a proof-of-concept demo file, which you can just open in any browser.
- The same thing can also be found [as a fiddle](https://jsfiddle.net/nobba/ct5hw1qr/).
-
+ The same thing can also be found [as a fiddle](https://jsfiddle.net/449Lamue/).
+In development, you can also try out the library by just including the css using RawGit
+`<link rel="stylesheet" type="text/css" href="https://rawgit.com/noppa/text-security/master/dist/text-security.css">`
 
 
 
