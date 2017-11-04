@@ -27,8 +27,12 @@ var SHAPES = args.shapes || 'circle,square,disc';
 var styleTemplate = fs.readFileSync('style-template.css', 'utf-8'), stylesheet = '',
   characters = [];
 
-for(var i = 0; i <= MAX_VALUE; i++){
+for (var i = 0; i <= MAX_VALUE; i++){
   characters.push(String.fromCharCode(i));
+}
+
+function bufferFrom(source) {
+  return typeof Buffer.from === 'function' ? Buffer.from(source) : new Buffer(source);
 }
 
 SHAPES.split(',').forEach(function (shape) {
@@ -45,17 +49,17 @@ SHAPES.split(',').forEach(function (shape) {
       //Create the other formats using the newly created font and Fontello's conversion libs
 
       var ttf = svg2ttf(fs.readFileSync(fontPath + '.svg', 'utf-8'), {});
-      fs.writeFileSync(fontPath + '.ttf', new Buffer(ttf.buffer), 'utf-8');
+      fs.writeFileSync(fontPath + '.ttf', bufferFrom(ttf.buffer), 'utf-8');
 
       //ttf2eot and ttf2woff expect a buffer, while svg2ttf seems to expect a string
       //this would be better read from the buffer, but will do for now
       var ttfFile = fs.readFileSync(fontPath + '.ttf');
 
       var eot = ttf2eot(ttfFile, {});
-      fs.writeFile(fontPath + '.eot', new Buffer(eot.buffer), 'utf-8');
+      fs.writeFile(fontPath + '.eot', bufferFrom(eot.buffer), 'utf-8');
 
       var woff = ttf2woff(ttfFile, {});
-      fs.writeFile(fontPath + '.woff', new Buffer(woff.buffer), 'utf-8');
+      fs.writeFile(fontPath + '.woff', bufferFrom(woff.buffer), 'utf-8');
     })
     .on('error', function (err) {
       throw err;

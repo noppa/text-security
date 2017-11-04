@@ -4,6 +4,7 @@
     "node": true
   },
   "rules":{
-    "indent": ["warn", 2]
+    "indent": ["warn", 2],
+    "keyword-spacing": ["warn", { "before": true }]
   }
 }
