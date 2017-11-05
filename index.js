@@ -35,10 +35,22 @@ function bufferFrom(source) {
   return typeof Buffer.from === 'function' ? Buffer.from(source) : new Buffer(source);
 }
 
+function logError(err) {
+  if (err) {
+    console.error(err);
+  }
+}
+
+var DIST_DIR = path.join(__dirname, 'dist');
+
+if (!fs.existsSync(DIST_DIR)) {
+  fs.mkdirSync(DIST_DIR);
+} 
+
 SHAPES.split(',').forEach(function (shape) {
   var
     fontName = 'text-security-' + shape,
-    fontPath = path.join(__dirname, 'dist', fontName),
+    fontPath = path.join(DIST_DIR, fontName),
     fontStream = icons2font({
       fontName: fontName
     });
@@ -51,19 +63,17 @@ SHAPES.split(',').forEach(function (shape) {
       var ttf = svg2ttf(fs.readFileSync(fontPath + '.svg', 'utf-8'), {});
       fs.writeFileSync(fontPath + '.ttf', bufferFrom(ttf.buffer), 'utf-8');
 
-      //ttf2eot and ttf2woff expect a buffer, while svg2ttf seems to expect a string
-      //this would be better read from the buffer, but will do for now
+      // ttf2eot and ttf2woff expect a buffer, while svg2ttf seems to expect a string
+      // this would be better read from the buffer, but will do for now
       var ttfFile = fs.readFileSync(fontPath + '.ttf');
 
       var eot = ttf2eot(ttfFile, {});
-      fs.writeFile(fontPath + '.eot', bufferFrom(eot.buffer), 'utf-8');
+      fs.writeFile(fontPath + '.eot', bufferFrom(eot.buffer), 'utf-8', logError);
 
       var woff = ttf2woff(ttfFile, {});
-      fs.writeFile(fontPath + '.woff', bufferFrom(woff.buffer), 'utf-8');
+      fs.writeFile(fontPath + '.woff', bufferFrom(woff.buffer), 'utf-8', logError);
     })
-    .on('error', function (err) {
-      throw err;
-    });
+    .on('error', logError);
 
   var glyph = fs.createReadStream(path.join(__dirname, 'assets', shape + '.svg'));
   glyph.metadata = {
@@ -76,4 +86,4 @@ SHAPES.split(',').forEach(function (shape) {
   stylesheet += styleTemplate.replace(/\{\{shape}}/g, shape) + '\n';
 });
 
-fs.writeFile(path.join(__dirname, 'dist', 'text-security.css'), stylesheet);
+fs.writeFile(path.join(__dirname, 'dist', 'text-security.css'), stylesheet, logError);
