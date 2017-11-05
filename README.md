@@ -8,7 +8,8 @@ width="5px"> circle <img
 src="https://cdn.rawgit.com/noppa/text-security/master/assets/circle.svg"
 width="10px"> and square <img
 src="https://cdn.rawgit.com/noppa/text-security/master/assets/square.svg"
-width="10px">. For example, setting `font-family: "text-security-circle"` for
+width="10px">. For example, setting  
+`font-family: "text-security-circle"` for
 an element should then display all the element's characters in a concealed
 way, like it was a password field.
 
