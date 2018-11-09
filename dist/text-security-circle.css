@@ -2,6 +2,7 @@
     font-family: 'text-security-circle';
     src: url('text-security-circle.eot');
     src: url('text-security-circle.eot?#iefix') format('embedded-opentype'),
+        url('text-security-circle.woff2') format('woff2'),
         url('text-security-circle.woff') format('woff'),
         url('text-security-circle.ttf') format('truetype'),
         url('text-security-circle.svg#text-security') format('svg');

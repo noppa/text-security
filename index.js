@@ -4,6 +4,7 @@ var args = require('yargs').argv;
 var svg2ttf = require('svg2ttf');
 var ttf2eot = require('ttf2eot');
 var ttf2woff = require('ttf2woff');
+var ttf2woff2 = require('ttf2woff2');
 var CleanCSS = require('clean-css');
 var icons2font = require('svgicons2svgfont');
 
@@ -82,6 +83,9 @@ SHAPES.split(',').forEach(function (s) {
 
       var woff = ttf2woff(ttfFile, {});
       fs.writeFile(fontPath + '.woff', bufferFrom(woff.buffer), 'utf-8', logError);
+
+      var woff2 = ttf2woff2(ttfFile, {});
+      fs.writeFile(fontPath + '.woff2', bufferFrom(woff2.buffer), 'utf-8', logError);
     })
     .on('error', logError);
 
