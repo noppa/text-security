@@ -3,9 +3,16 @@
   "env":{
     "node": true
   },
+  "parserOptions": {
+    "ecmaVersion": 2017
+  },
   "rules":{
-    "indent": ["warn", 2],
-    "keyword-spacing": ["warn", { "before": true }],
-    "no-console": 0
-  }
+    "indent": ["error", "tab"],
+    "keyword-spacing": ["error", { "before": true }],
+		"no-console": 0,
+		"semi": ["error", "never"]
+	},
+	"globals": {
+		"Promise": false
+	}
 }

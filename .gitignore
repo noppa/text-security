@@ -1,3 +1,7 @@
 node_modules
 .vscode
 .idea/
+tmp
+bin
+/*.woff
+/text-security.css

@@ -24,12 +24,13 @@
   },
   "homepage": "https://github.com/noppa/text-security#readme",
   "devDependencies": {
-    "clean-css": "^4.1.9",
-    "svg2ttf": "^4.1.0",
-    "svgicons2svgfont": "^8.0.0",
-    "ttf2eot": "^2.0.0",
-    "ttf2woff": "^2.0.1",
-    "ttf2woff2": "^2.0.3",
-    "yargs": "^10.1.0"
-  }
+    "clean-css": "^4.2.1",
+		"eslint": "^5.10.0",
+		"svgson": "^3.0.0",
+    "svg2ttf": "^4.1.0"
+	},
+	"files": [
+		"./text-security-disc.woff",
+		"./text-security.css"
+	]
 }
