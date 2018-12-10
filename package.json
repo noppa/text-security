@@ -1,6 +1,6 @@
 {
   "name": "text-security",
-  "version": "1.2.0",
+  "version": "2.0.0-alpha.0",
   "description": "Cross-browser alternative to -webkit-text-security",
   "main": "index.js",
   "scripts": {
@@ -15,8 +15,8 @@
   "keywords": [
     "-webkit-text-security",
     "conceal",
-		"password",
-		"dots"
+    "password",
+    "dots"
   ],
   "author": "Oskari Noppa",
   "license": "MIT",
@@ -26,12 +26,12 @@
   "homepage": "https://github.com/noppa/text-security#readme",
   "devDependencies": {
     "clean-css": "^4.2.1",
-		"eslint": "^5.10.0",
-		"svgson": "^3.0.0",
-    "svg2ttf": "^4.1.0"
-	},
-	"files": [
-		"./text-security-disc.woff",
-		"./text-security.css"
-	]
+    "eslint": "^5.10.0",
+    "svg2ttf": "^4.1.0",
+    "svgson": "^3.0.0"
+  },
+  "files": [
+    "./text-security-disc.woff",
+    "./text-security.css"
+  ]
 }
