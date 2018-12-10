@@ -15,7 +15,8 @@
   "keywords": [
     "-webkit-text-security",
     "conceal",
-    "password"
+		"password",
+		"dots"
   ],
   "author": "Oskari Noppa",
   "license": "MIT",

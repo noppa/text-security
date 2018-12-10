@@ -19,8 +19,8 @@ fact, the project was created for this exact purpose [as an answer to a
 StackOverflow
 question](https://stackoverflow.com/questions/36935576/how-to-make-input-type-tel-work-as-type-password/36950075#36950075).
 
-## Version 3 Beta
-You are looking at the branch for version 3, which is currently in alpha. Not everything works yet
+## Version 2 Alpha
+You are looking at the branch for version 2, which is currently in alpha. Not everything works yet
 and things will break later. On the bright side, [issue #4](https://github.com/noppa/text-security/issues/4)
 is fixed in this branch.
 
