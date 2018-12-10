@@ -26,14 +26,15 @@ is fixed in this branch.
 
 ## Installation
 ```
-npm install text-security@3-alpha.0
+npm install text-security@alpha
 ```
 
 You can use the fonts by adding this repo as a dependency and including
-`dist/text-security.css` in your project, like so
+`text-security.css` in your project
 
-`<link rel="stylesheet" type="text/css"
-href="node_modules/text-security/dist/text-security.css">`
+```html
+	<link rel="stylesheet" type="text/css" href="node_modules/text-security/text-security.css">
+```
 
 ## Building with custom modifications
 If you want to make your own tweaks, the `npm run build` command has two

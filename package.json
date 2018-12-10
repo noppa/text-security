@@ -31,7 +31,7 @@
     "svgson": "^3.0.0"
   },
   "files": [
-    "./text-security-disc.woff",
-    "./text-security.css"
+    "text-security-disc.woff",
+    "text-security.css"
   ]
 }
