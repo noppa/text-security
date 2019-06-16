@@ -10,7 +10,9 @@
     "indent": ["error", "tab"],
     "keyword-spacing": ["error", { "before": true }],
 		"no-console": 0,
-		"semi": ["error", "never"]
+		"semi": ["error", "never"],
+		"eol-last": 2,
+		"linebreak-style": ["error", "unix"]
 	},
 	"globals": {
 		"Promise": false
