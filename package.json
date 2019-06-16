@@ -4,9 +4,7 @@
   "description": "Cross-browser alternative to -webkit-text-security",
   "main": "index.js",
   "scripts": {
-    "test": "",
-    "prebuild": "npm install",
-    "build": "node index.js"
+    "test": ""
   },
   "repository": {
     "type": "git",
@@ -26,7 +24,7 @@
   "homepage": "https://github.com/noppa/text-security#readme",
   "devDependencies": {
     "clean-css": "^4.2.1",
-    "eslint": "^5.10.0",
+    "eslint": "^5.16.0",
     "svg2ttf": "^4.1.0",
     "svgson": "^3.0.0"
   },

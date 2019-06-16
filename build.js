@@ -21,15 +21,16 @@ for (const dir of [tmpDir, distDir]) {
 	}
 }
 
-const promises = names.map(async name => {
+const promises = names.map(async symbolName => {
+	const fontName = `text-security-${symbolName}`
 	const results = []
 	for (let i = 0; i < codepoints; i++) {
 		results.push(
-			`<map code="0x${i.toString(16)}" name="${name}" />`
+			`<map code="0x${i.toString(16)}" name="${fontName}" />`
 		)
 	}
 
-	const svgInfo = await readFile(`./assets/${name}.svg`, 'utf8').then(svgson.parse)
+	const svgInfo = await readFile(`./assets/${symbolName}.svg`, 'utf8').then(svgson.parse)
 	const {d} = svgInfo.children[0].attributes
 	const [, , width, height] = svgInfo.attributes.viewBox.split(' ').map(_ => parseInt(_))
 
@@ -43,21 +44,21 @@ const promises = names.map(async name => {
 	`)
 
 	const ttglyph = `
-	<TTGlyph name="${name}" xMin="0" yMin="0" xMax="${width}" yMax="${height}">
+	<TTGlyph name="${fontName}" xMin="0" yMin="0" xMax="${width}" yMax="${height}">
 	${contours}
 	<instructions />
 	</TTGlyph>
 `
 
 	const lines = br + results.join(br) + br
-	const tmpFile = `${tmpDir}/text-security-${name}.ttx`
-	const distFile = `${distDir}/text-security-${name}.woff`
+	const tmpFile = `${tmpDir}/${fontName}.ttx`
+	const distFile = `${distDir}/${fontName}.woff`
 
 	// Take template.ttx and replace placehodlers with actual values.
 	const ttxFile = (await readFile('./template.ttx', 'utf8'))
 		.replace(/{{cmap}}/g, lines)
 		.replace(/{{ttglyph}}/g, ttglyph)
-		.replace(/{{name}}/g, name)
+		.replace(/{{name}}/g, fontName)
 		.replace(/{{width}}/g, width)
 	
 	// Generate intermediate ttx file
@@ -74,7 +75,7 @@ Promise.all(promises)
 	})
 	.then(
 		() => console.log('Done!'),
-		() => console.error('Build failed.'))
+		(e) => console.error('Build failed.', e))
 
 
 /**
