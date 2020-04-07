@@ -4,3 +4,6 @@
 [submodule "adobe-blank-2"]
 	path = adobe-blank-2
 	url = https://github.com/adobe-fonts/adobe-blank-2.git
+[submodule "t1utils"]
+	path = t1utils
+	url = https://github.com/kohler/t1utils.git
