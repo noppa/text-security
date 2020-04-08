@@ -1,11 +1,6 @@
-#!/usr/bin/env bash
 set -e
-mkdir -p build-artifacts
-
-sed -e '/<<SHAPE>>/ r shapes/circle.ps' -e 's/<<SHAPE>>//' font-template.ps > build-artifacts/circle.txt
-
-t1utils/t1asm build-artifacts/circle.txt > ./font.pfa
-mergefonts -cid cidfontinfo cidfont.ps font.pfa
+t1utils/t1asm /build-artifacts/circle.txt > /build-artifacts/font.pfa
+mergefonts -cid cidfontinfo cidfont.ps /build-artifacts/font.pfa
 makeotf -f cidfont.ps -omitMacNames -ff features -fi cidfontinfo -mf FontMenuNameDB -r -ch UnicodeAll-UTF32-H
 
 sfntedit -a DSIG=DSIG.bin,OS/2=OS2.bin,cmap=cmap.bin -d VORG,vhea,vmtx text-security.otf
