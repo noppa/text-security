@@ -1,0 +1,25 @@
+languagesystem DFLT dflt;
+
+table head {
+  FontRevision 2.001;
+} head;
+
+table name {
+  nameid 0 "Copyright 2020 Oskari Noppa";
+  nameid 8 "Oskari Noppa";
+  nameid 11 "https://github.com/noppa/text-security";
+  nameid 13 "This Font Software is licensed under the SIL Open Font License, Version 1.1. This Font Software is distributed on an \0022AS IS\0022 BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the SIL Open Font License for the specific language, permissions and limitations governing your use of this Font Software.";
+  nameid 14 "http://scripts.sil.org/OFL";
+} name;
+
+table OS/2 {
+  TypoAscender 880;
+  TypoDescender -120;
+  TypoLineGap 0;
+  XHeight 0;
+  CapHeight 0;
+  WeightClass 400;
+  WidthClass 5;
+  Panose 0 0 0 0 0 0 0 0 0 0;
+  FSType 0;
+} OS/2;
