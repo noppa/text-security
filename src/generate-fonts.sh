@@ -19,7 +19,7 @@ sfntedit -f /tmp/text-security-$shape.otf
 rm -f /tmp/text-security-$shape.ttf
 otf2ttf /tmp/text-security-$shape.otf
 sfntedit -d DSIG /tmp/text-security-$shape.ttf
-mv /tmp/text-security-$shape.ttf /output/
+woff2_compress /tmp/text-security-$shape.ttf /output/text-security-$shape.woff2
 
 
 # Compatibility fonts for browsers that don't support cmap subtable 12.
