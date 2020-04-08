@@ -17,4 +17,4 @@ sfntedit -f /build-artifacts/text-security.otf
 rm -f /build-artifacts/text-security.ttf
 otf2ttf /build-artifacts/text-security.otf
 sfntedit -d DSIG /build-artifacts/text-security.ttf
-mv /build-artifacts/text-security.ttf /dist/
+mv /build-artifacts/text-security.ttf /output/

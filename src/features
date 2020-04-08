@@ -1,7 +1,7 @@
 languagesystem DFLT dflt;
 
 table head {
-  FontRevision 2.001;
+  FontRevision 3.0;
 } head;
 
 table name {
