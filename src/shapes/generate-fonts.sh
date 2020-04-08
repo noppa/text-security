@@ -1,5 +1,7 @@
+#!/bin/sh
+
 set -e
-t1utils/t1asm /build-artifacts/circle.txt > /build-artifacts/font.pfa
+t1utils/t1asm /build-artifacts/font-circle.txt > /build-artifacts/font.pfa
 mergefonts -cid cidfontinfo cidfont.ps /build-artifacts/font.pfa
 makeotf -f cidfont.ps -omitMacNames -ff features -fi cidfontinfo -mf FontMenuNameDB -r -ch UnicodeAll-UTF32-H
 

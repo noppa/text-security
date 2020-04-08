@@ -1,14 +1,19 @@
-FROM nikolaik/python-nodejs:python3.8-nodejs12-alpine
+FROM python:3.9.0a5-alpine3.10
 ENV PATH="/root/.local/bin:$PATH"
 RUN apk update
 RUN apk add build-base g++ libxslt-dev libxml2 autoconf automake
-ADD . /workdir
-WORKDIR /workdir
 RUN pip install --user afdko
-RUN ls
-WORKDIR /workdir/t1utils
+
+# Copy submodule dependencies to container.
+COPY ./t1utils /t1utils
+COPY ./adobe-blank /adobe-blank
+COPY ./adobe-blank-2 /adobe-blank-2
+
+# Install t1utils for generating pfa file for the font.
+WORKDIR /t1utils
 RUN autoreconf -i
 RUN ./configure
 RUN make
 RUN make install
-WORKDIR /workdir
+
+WORKDIR /

@@ -5,14 +5,14 @@ from pathlib import Path
 Path("/build-artifacts").mkdir(exist_ok=True)
 
 # /shapes directory should be "bind mounted" from host when creating the container.
-shape_files = os.listdir("/shapes")
-font_template = Path("/workdir/font-template.ps").read_text()
+shape_files = os.listdir("/src/shapes")
+font_template = Path("/src/font-template.ps").read_text()
 # cidfontinfo = Path("/workdir/cidfontinfo").read_text()
 
 for shape_file in shape_files:
-  shape = Path(shape_file).read_text()
-  shape_name = os.path.splitext(shape_file)[0]
+  (shape_name, ext) = os.path.splitext(shape_file)
+  if ext != ".ps": continue
+  shape = Path(f"/src/shapes/{shape_file}").read_text()
   font_template_compiled = font_template.replace('<<SHAPE>>', shape)
   Path(f"/build-artifacts/font-{shape_name}.txt").write_text(font_template_compiled)
-  subprocess.run("/workdir/generate-fonts.sh")
-
+  subprocess.call(["/src/generate-fonts.sh"])
