@@ -1,6 +1,6 @@
 @font-face {
   font-family: 'text-security';
-  src: url('text-security-{{shape}}.eot?#iefix') format('embedded-opentype'),
-      url('text-security-{{shape}}.woff2') format('woff2'),
-      url('text-security-{{shape}}.ttf') format('truetype');
+  src: url('text-security.eot?#iefix') format('embedded-opentype'),
+      url('text-security.woff2') format('woff2'),
+      url('text-security.ttf') format('truetype');
 }

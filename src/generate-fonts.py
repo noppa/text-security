@@ -23,24 +23,28 @@ def get_shape_file_path(shape_file):
   return f"/src/shapes/{shape_file}"
 
 def get_shape_mtime(shape_file):
-  return os.stat(get_shape_file_path(shape_file)).st_mtime
+  return os.path.getmtime(get_shape_file_path(shape_file))
 
 def get_shape_name(shape_file):
   return os.path.splitext(shape_file)[0]
+
+def prepare_font_config_file(shape_file):
+  shape_name = get_shape_name(shape_file)
+  shape = Path(get_shape_file_path(shape_file)).read_text()
+  font_name = f"text-security-{shape_name}"
+  font_template_compiled = font_template.replace("<<SHAPE>>", shape).replace("text-security", font_name)
+  Path(f"/tmp/{shape_name}-font.txt").write_text(font_template_compiled)
 
 def generate_font_for_shape(shape_name, skip_compatibility_fonts=False):
   extra_arg = "--no-compat" if skip_compatibility_fonts else ""
   subprocess.call(["/src/generate-fonts.sh", shape_name, extra_arg])
 
-
 def build_all():
   for shape_file in shape_files:
     shape_name = get_shape_name(shape_file)
-    # Replace <<SPACE>> placeholder in the font template with shape definition.
-    shape = Path(get_shape_file_path(shape_file)).read_text()
     font_name = f"text-security-{shape_name}"
-    font_template_compiled = font_template.replace("<<SHAPE>>", shape).replace("text-security", font_name)
-    Path(f"/tmp/{shape_name}-font.txt").write_text(font_template_compiled)
+    prepare_font_config_file(shape_file)
+    # Replace <<SPACE>> placeholder in the font template with shape definition.
     shape_css = css_template.replace("text-security", f"text-security-{shape_name}")
     css_file_contents.append(shape_css)
     # Replace font name in font configuration files
@@ -54,7 +58,6 @@ def build_all():
   Path("/output/text-security.css").write_text(cssmin.cssmin("\n".join(css_file_contents)))
 
 
-
 # Really simple polling-based watch mode implementation.
 # Not super elegant but good enough for our needs.
 def watch():
@@ -66,9 +69,9 @@ def watch():
       mtime = get_shape_mtime(shape_file)
       if mtime != file_mtimes[shape_file]:
         file_mtimes[shape_file] = mtime
+        prepare_font_config_file(shape_file)
         generate_font_for_shape(get_shape_name(shape_file), True)
         
-
 build_all()
 if watch_mode:
   watch()
