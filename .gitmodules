@@ -7,3 +7,6 @@
 [submodule "t1utils"]
 	path = t1utils
 	url = https://github.com/kohler/t1utils.git
+[submodule "ttf2eot"]
+	path = ttf2eot
+	url = https://github.com/wget/ttf2eot.git

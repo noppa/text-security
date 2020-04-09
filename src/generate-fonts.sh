@@ -50,7 +50,6 @@ sfntedit -f /tmp/text-security-$shape.otf
 rm -f /tmp/text-security-$shape.ttf
 otf2ttf /tmp/text-security-$shape.otf
 sfntedit -d DSIG /tmp/text-security-$shape.ttf
-ttf2eot /tmp/text-security-$shape.ttf
+/ttf2eot/ttf2eot < /tmp/text-security-$shape.ttf > /output/text-security-$shape-compat.eot
 mv /tmp/text-security-$shape.ttf /output/text-security-$shape-compat.ttf
-mv /tmp/text-security-$shape.eot /output/text-security-$shape-compat.eot
 echo "Font file output/text-security-$shape-compat.ttf generated"
