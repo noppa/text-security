@@ -8,10 +8,11 @@ RUN apk add build-base g++ libxslt-dev libxml2 autoconf automake woff2
 COPY ./t1utils /t1utils
 COPY ./adobe-blank /adobe-blank
 COPY ./adobe-blank-2 /adobe-blank-2
-COPY ./woff2 /woff2
 
 # makeotf, sfntedit, etc.
 RUN pip install --user afdko
+
+RUN pip install --user cssmin
 
 # Install t1utils for generating pfa file for the font.
 WORKDIR /t1utils

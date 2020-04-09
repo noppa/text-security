@@ -1,5 +1,5 @@
 #!/bin/sh
-mkdir -p bin
+mkdir -p output
 
 docker run \
   --mount type=bind,source="$(pwd)"/src,destination=/src \
