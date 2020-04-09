@@ -4,6 +4,8 @@ set -e
 shape=$1
 no_compat=$2
 
+echo "$shape $no_compat"
+
 /t1utils/t1asm /tmp/$shape-font.txt > /tmp/$shape-font.pfa
 mergefonts -cid /tmp/$shape-cidfontinfo /tmp/$shape-cidfont /tmp/$shape-font.pfa
 makeotf -f /tmp/$shape-cidfont -omitMacNames \
@@ -24,7 +26,7 @@ woff2_compress /tmp/text-security-$shape.ttf
 mv /tmp/text-security-$shape.woff2 /output/
 echo "Font file output/text-security-$shape.woff2 generated"
 
-if ["$no_compat" = "--no-compat"]; then
+if [ "$no_compat" == "--no-compat" ]; then
   # For performance reasons, we don't generate the compatibility TTF font
   # in watch mode. Most likely use case for watch mode is that a shape
   # is being developed and displayed in a modern browser, so the compatibility

@@ -28,8 +28,9 @@ def get_shape_mtime(shape_file):
 def get_shape_name(shape_file):
   return os.path.splitext(shape_file)[0]
 
-def generate_font_for_shape(shape_name, extra_args = []):
-  subprocess.call(["/src/generate-fonts.sh", shape_name] + extra_args)
+def generate_font_for_shape(shape_name, skip_compatibility_fonts=False):
+  extra_arg = "--no-compat" if skip_compatibility_fonts else ""
+  subprocess.call(["/src/generate-fonts.sh", shape_name, extra_arg])
 
 
 def build_all():
@@ -57,14 +58,15 @@ def build_all():
 # Really simple polling-based watch mode implementation.
 # Not super elegant but good enough for our needs.
 def watch():
-  file_mtimes = dict(zip(shape_files, map(shape_files, get_shape_mtime)))
+  file_mtimes = dict(zip(shape_files, map(get_shape_mtime, shape_files)))
   while True:
-    time.sleep(2)
+    try: time.sleep(2)
+    except KeyboardInterrupt: break
     for shape_file in shape_files:
       mtime = get_shape_mtime(shape_file)
       if mtime != file_mtimes[shape_file]:
         file_mtimes[shape_file] = mtime
-        generate_font_for_shape(get_shape_name(shape_file), ["--no-compat"])
+        generate_font_for_shape(get_shape_name(shape_file), True)
         
 
 build_all()
