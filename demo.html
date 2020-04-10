@@ -11,55 +11,82 @@
   <style>
     body {
       font-family: Arial;
+      text-align: center;
     }
-    .conceal-disc {
-      font-family: 'text-security-disc';
+    td {
+      text-align: center;
+      padding: 20px;
     }
-    .conceal-circle {
-      font-family: 'text-security-circle';
+    small {
+      font-size: 0.7em;
+      font-weight: normal;
     }
-    .conceal-square {
-      font-family: 'text-security-square';
-    }
-
-    label>span {
-      display:inline-block;
-      min-width: 180px;
-    }
-    div {
-      margin-top: 20px;
-    }
-    input {
-      font-size: 150px;
+    .main {
+      display: inline-block;
     }
   </style>
 
-  <div>
-    <label>
-      <span>Normal password field</span>
-      <input type="password">
-    </label>
+  <div class="main">
+    <table>
+      <thead>
+        <tr>
+          <th>shape</th>
+          <th>
+            text-securty font
+          </th>
+          <th>
+            -webkit-text-security<br/>
+            <small>(only works in WebKit-based browsers)</small>
+          </th>
+          <th>
+            password field
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            disc<br/>
+            <small>(the usual password field shape)</small>
+          </td>
+          <td>
+            <input type="text" style="font-family: text-security-disc;" value="foobar" />
+          </td>
+          <td>
+            <input type="text" style="-webkit-text-security: disc;" value="foobar" />
+          </td>
+          <td>
+            <input type="password" value="foobar" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            circle
+          </td>
+          <td>
+            <input type="text" style="font-family: text-security-circle;" value="foobar" />
+          </td>
+          <td>
+            <input type="text" style="-webkit-text-security: circle;" value="foobar" />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            square
+          </td>
+          <td>
+            <input type="text" style="font-family: text-security-square;" value="foobar" />
+          </td>
+          <td>
+            <input type="text" style="-webkit-text-security: square;" value="foobar" />
+          </td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
   </div>
-  <div>
-    <label>
-      <span>text-security-disc</span>
-      <input type="text" class="conceal-disc" value="abc">
-    </label>
-  </div>
-  <div>
-    <label>
-      <span>text-security-square</span>
-      <input type="text" style="-webkit-text-security: square;" value="abc">
-      <input type="text" class="conceal-square" value="abc">
-    </label>
-  </div>
-  <div>
-    <label>
-      <span>text-security-circle</span>
-      <input type="text" style="-webkit-text-security: circle;" value="abc">
-      <input type="text" class="conceal-circle" value="abc">
-    </label>
-  </div>
+
 </body>
 
 </html>
