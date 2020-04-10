@@ -9,9 +9,28 @@
 
 <body>
   <style>
+    html {
+      font-size: 18px;
+      min-height: 100%;
+      position: relative;
+    }
     body {
       font-family: Arial;
       text-align: center;
+      background: white;
+      color: black;
+      margin: 0px;
+      padding: 0px;
+    }
+    header {
+      padding-top: 20px;
+      background: black;
+      color: white;
+      min-height: 50vh;
+    }
+    main {
+      padding-top: 40px;
+      display: inline-block;
     }
     td {
       text-align: center;
@@ -21,12 +40,59 @@
       font-size: 0.7em;
       font-weight: normal;
     }
-    .main {
+    h1 {
+      font-size: 5rem;
+    }
+
+    .bg-disc {
+      font-size: 20rem;
+      position: absolute;
       display: inline-block;
+      top: -20rem;
+      font-family: text-security-disc;
+      color: white;
+      mix-blend-mode: difference;
+      animation: dropping-disc 10s infinite;
+    }
+
+    .bg-wrap {
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    @keyframes dropping-disc {
+      to {
+        top: 110%;
+      }
     }
   </style>
 
-  <div class="main">
+  <header>
+    <h1>text-security</h1>
+  </header>
+
+  <div class="bg-wrap">
+    <div class="bg-disc" style="left: 0; animation-delay: 3s;">t</div>
+    <div class="bg-disc" style="left: 7%; animation-delay: 1s;">e</div>
+    <div class="bg-disc" style="left: 14%; animation-delay: 10s;">x</div>
+    <div class="bg-disc" style="left: 21%; animation-delay: 6s;">t</div>
+    <div class="bg-disc" style="left: 28%; animation-delay: 5s;">t</div>
+    <div class="bg-disc" style="left: 35%; animation-delay: 8s;">-</div>
+    <div class="bg-disc" style="left: 42%; animation-delay: 0s;">e</div>
+    <div class="bg-disc" style="left: 49%; animation-delay: 9s;">c</div>
+    <div class="bg-disc" style="left: 56%; animation-delay: 14s;">u</div>
+    <div class="bg-disc" style="left: 63%; animation-delay: 7s;">r</div>
+    <div class="bg-disc" style="left: 70%; animation-delay: 2s;">i</div>
+    <div class="bg-disc" style="left: 77%; animation-delay: 11s;">t</div>
+    <div class="bg-disc" style="left: 84%; animation-delay: 4s;">y</div>
+  </div>
+
+  <main>
     <table>
       <thead>
         <tr>
@@ -85,7 +151,7 @@
         </tr>
       </tbody>
     </table>
-  </div>
+  </main>
 
 </body>
 
