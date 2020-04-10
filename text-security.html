@@ -23,7 +23,7 @@
       padding: 0px;
       /* Hacky solution to make the dropping balls visible after the
         absolutely positioned main-element ends. */
-      min-height: 80rem;
+      min-height: 90rem;
     }
     header {
       padding: 20px 10px 100px 10px;
@@ -202,13 +202,13 @@
               <small>(the usual password field shape)</small>
             </td>
             <td>
-              <input type="text" style="font-family: text-security-disc;" value=" foo [某" />
+              <input type="text" style="font-family: text-security-disc;" value="🕵️ foo [某" />
             </td>
             <td>
-              <input type="text" style="-webkit-text-security: disc;" value=" foo [某" />
+              <input type="text" style="-webkit-text-security: disc;" value="🕵️ foo [某" />
             </td>
             <td>
-              <input type="password" value=" foo [某" />
+              <input type="password" value="🕵️ foo [某" />
             </td>
           </tr>
           <tr>
@@ -216,10 +216,10 @@
               circle
             </td>
             <td>
-              <input type="text" style="font-family: text-security-circle;" value=" foo [某" />
+              <input type="text" style="font-family: text-security-circle;" value="🕵️ foo [某" />
             </td>
             <td>
-              <input type="text" style="-webkit-text-security: circle;" value=" foo [某" />
+              <input type="text" style="-webkit-text-security: circle;" value="🕵️ foo [某" />
             </td>
             <td></td>
           </tr>
@@ -228,10 +228,10 @@
               square
             </td>
             <td>
-              <input type="text" style="font-family: text-security-square;" value=" foo [某" />
+              <input type="text" style="font-family: text-security-square;" value="🕵️ foo [某" />
             </td>
             <td>
-              <input type="text" style="-webkit-text-security: square;" value=" foo [某" />
+              <input type="text" style="-webkit-text-security: square;" value="🕵️ foo [某" />
             </td>
             <td></td>
           </tr>
@@ -248,7 +248,11 @@
       <p>
         Include one of the pregenerated css files or use
         <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face">@font-face</a>
-        to manually load the fonts you need (most likely just text-security-disc).
+        to manually load the fonts you need (most likely text-security-disc).
+      </p>
+      <h2>License</h2>
+      <p>
+        <a href="https://opensource.org/licenses/OFL-1.1">SIL Open font lisence</a>
       </p>
     </div>
   </main>
