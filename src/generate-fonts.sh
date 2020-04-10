@@ -4,8 +4,6 @@ set -e
 shape=$1
 no_compat=$2
 
-echo "$shape $no_compat"
-
 /t1utils/t1asm /tmp/$shape-font.txt > /tmp/$shape-font.pfa
 mergefonts -cid /tmp/$shape-cidfontinfo /tmp/$shape-cidfont /tmp/$shape-font.pfa
 makeotf -f /tmp/$shape-cidfont -omitMacNames \

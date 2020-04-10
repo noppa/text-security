@@ -29,6 +29,9 @@
     div {
       margin-top: 20px;
     }
+    input {
+      font-size: 150px;
+    }
   </style>
 
   <div>
@@ -40,13 +43,21 @@
   <div>
     <label>
       <span>text-security-disc</span>
-      <input type="text" class="conceal-disc">
+      <input type="text" class="conceal-disc" value="abc">
     </label>
   </div>
   <div>
     <label>
       <span>text-security-square</span>
-      <input type="password" class="conceal-square">
+      <input type="text" style="-webkit-text-security: square;" value="abc">
+      <input type="text" class="conceal-square" value="abc">
+    </label>
+  </div>
+  <div>
+    <label>
+      <span>text-security-circle</span>
+      <input type="text" style="-webkit-text-security: circle;" value="abc">
+      <input type="text" class="conceal-circle" value="abc">
     </label>
   </div>
 </body>
