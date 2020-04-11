@@ -17,7 +17,7 @@ Firefox, Safari for iOS and IE 11. Opera Mini is **not** supported, as it
 [does not support](https://caniuse.com/#feat=fontface) `@font-face` web fonts.
 
 Modern browsers that support WOFF2 and
-[cmap subtable format 12](https://docs.microsoft.com/en-us/typography/opentype/spec/cmap#format-12-segmented-coverage) will use the optimized WOFF2 font, which is only **0.8 kb** in size.
+[cmap subtable format 13](https://docs.microsoft.com/en-us/typography/opentype/spec/cmap#format-13-many-to-one-range-mappings) will use the optimized WOFF2 font, which is only **0.8 kb** in size.
 Older browsers like IE will automatically load the compatibility TTF or EOT fonts
 whose names are suffixed "-compat" and weigh about 200 kb.
 
