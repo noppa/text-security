@@ -1,18 +1,12 @@
-# text-security
+![text-security](assets/banner.png)
 
-![text-security banner](assets/banner.png)
-
-Cross-browser alternative to [`-webkit-text-security`](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-text-security).
-
-Check out demo at [noppa.github.io/text-security.html](noppa.github.io/text-security.html).
+Cross-browser alternative to [`-webkit-text-security`](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-text-security). Check out demo at [noppa.github.io/text-security.html](noppa.github.io/text-security.html).
 
 text-security is a simple set of fonts that only consist of 3 different characters.
-Disc (the shape normally used in password fields), circle and square. For example, setting  
+Disc (the shape normally used in password fields), circle and square. For example, setting
 `font-family: "text-security-circle"` for
 an element should then display all the element's characters in a concealed
-way, like it was a password field.
-
-This is useful if you want to get the benefits of `input[type="password"]`
+way, like it was a password field. This is useful if you want to get the benefits of `input[type="password"]`
 but also combine that with other element types, like `input[type="tel"]`. In
 fact, the project was created for this exact purpose [as an answer to a
 StackOverflow
@@ -22,9 +16,9 @@ Tested in recent versions of Chrome (for desktop and mobile), Edge,
 Firefox, Safari for iOS and IE 11. Opera Mini is **not** supported, as it
 [does not support](https://caniuse.com/#feat=fontface) `@font-face` web fonts.
 
-Modern browsers that support Woff2 and
-[cmap subtable format 12](https://docs.microsoft.com/en-us/typography/opentype/spec/cmap#format-12-segmented-coverage) will use the optimized woff2 font, which is only **0.8 kb** in size.
-Older browsers like IE will automatically load the compatibility ttf and eot fonts
+Modern browsers that support WOFF2 and
+[cmap subtable format 12](https://docs.microsoft.com/en-us/typography/opentype/spec/cmap#format-12-segmented-coverage) will use the optimized WOFF2 font, which is only **0.8 kb** in size.
+Older browsers like IE will automatically load the compatibility TTF and EOT fonts
 whose names are suffixed "-compat" and weigh about 200 kb.
 
 The project builds on top of Adobe's similar font projects [Adobe Notdef](https://github.com/adobe-fonts/adobe-notdef/tree/1f1f863b2295543598b69bebe42db3e73fe58353)
@@ -35,11 +29,11 @@ and [Adobe Blank 2](https://github.com/adobe-fonts/adobe-blank-2/tree/46dce06a42
 npm install text-security
 ```
 
-You can use the fonts by adding this repo as a dependency and including
+You can use the fonts by adding this project as a dependency and including
 `text-security.css` in your project.
 
 ```html
-<link href="node_modules/text-security/text-security.css" rel="stylesheet" type="text/css">`
+<link href="node_modules/text-security/text-security.css" rel="stylesheet" type="text/css">
 ```
 Alternatively, you can grab the fonts you need (most likely text-security-disc and text-security-disc-compat)
 from the releases page and include your own `@font-face` definition in CSS.  
@@ -73,7 +67,4 @@ They are also lisenced with SIL.
 
 Also included as submodules are
 [ttf2eot](https://github.com/wget/ttf2eot/tree/b732f41f717cb934b44ed1979d2e42b2db15dc26) and
-[t1utils](https://github.com/kohler/t1utils/blob/3f1ddda424353f0f926dd28efa47b0ac61556ce8).  
-
-t1utils has a slightly modified MIT lisence [here](https://github.com/kohler/t1utils/blob/3f1ddda424353f0f926dd28efa47b0ac61556ce8/LICENSE).
-
+[t1utils](https://github.com/kohler/t1utils/blob/3f1ddda424353f0f926dd28efa47b0ac61556ce8). t1utils has a slightly modified MIT lisence [here](https://github.com/kohler/t1utils/blob/3f1ddda424353f0f926dd28efa47b0ac61556ce8/LICENSE). ttf2eot is extracted from Chromium project.
