@@ -10,3 +10,6 @@
 [submodule "ttf2eot"]
 	path = ttf2eot
 	url = https://github.com/wget/ttf2eot.git
+[submodule "adobe-notdef"]
+	path = adobe-notdef
+	url = https://github.com/adobe-fonts/adobe-notdef.git

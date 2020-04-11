@@ -9,6 +9,7 @@ COPY ./t1utils /t1utils
 COPY ./ttf2eot /ttf2eot
 COPY ./adobe-blank /adobe-blank
 COPY ./adobe-blank-2 /adobe-blank-2
+COPY ./adobe-notdef /adobe-notdef
 
 # makeotf, sfntedit, etc.
 RUN pip install --user afdko
