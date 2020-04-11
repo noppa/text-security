@@ -54,17 +54,17 @@ After the font is loaded, making a field behave like password field is easy.
 This repository contains the build scripts needed for creating these fonts.
 If you want to add your own shapes or do other modifications, see [Development.md](Development.md).
 
-## Lisence
-The published font is lisenced with [SIL Open Font Lisence](https://opensource.org/licenses/OFL-1.1).
-This is the only lisence you need to care about if you are simply using the prebuilt fonts.
+## License
+The published font is licensed with [SIL Open Font License](https://opensource.org/licenses/OFL-1.1).
+This is the only license you need to care about if you are simply using the prebuilt fonts.
 
 All the code in this repository that is used for generating these fonts (Dockerfile, Python & shell scripts etc.)
-[are lisenced MIT](LISENCE_FOR_BUILDTOOLS).
+[are licensed MIT](LICENSE_FOR_BUILDTOOLS).
 
 This project builds on top of Adobe's font projects [Adobe Notdef](https://github.com/adobe-fonts/adobe-notdef/tree/1f1f863b2295543598b69bebe42db3e73fe58353)
 and [Adobe Blank 2](https://github.com/adobe-fonts/adobe-blank-2/tree/46dce06a42de9230bd96e0c9dffe9b3d40a7a0de), which are included as submodules.
-They are also lisenced with SIL.
+They are also licensed with SIL.
 
 Also included as submodules are
 [ttf2eot](https://github.com/wget/ttf2eot/tree/b732f41f717cb934b44ed1979d2e42b2db15dc26) and
-[t1utils](https://github.com/kohler/t1utils/blob/3f1ddda424353f0f926dd28efa47b0ac61556ce8). t1utils has a slightly modified MIT lisence [here](https://github.com/kohler/t1utils/blob/3f1ddda424353f0f926dd28efa47b0ac61556ce8/LICENSE). ttf2eot is extracted from Chromium project.
+[t1utils](https://github.com/kohler/t1utils/blob/3f1ddda424353f0f926dd28efa47b0ac61556ce8). t1utils has a slightly modified MIT license [here](https://github.com/kohler/t1utils/blob/3f1ddda424353f0f926dd28efa47b0ac61556ce8/LICENSE). ttf2eot is extracted from Chromium project.
