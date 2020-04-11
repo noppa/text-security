@@ -59,7 +59,7 @@ The published font is licensed with [SIL Open Font License](https://opensource.o
 This is the only license you need to care about if you are simply using the prebuilt fonts.
 
 All the code in this repository that is used for generating these fonts (Dockerfile, Python & shell scripts etc.)
-[are licensed MIT](LICENSE_FOR_BUILDTOOLS).
+[are licensed MIT](LICENSE_FOR_BUILDTOOLS.txt).
 
 This project builds on top of Adobe's font projects [Adobe Notdef](https://github.com/adobe-fonts/adobe-notdef/tree/1f1f863b2295543598b69bebe42db3e73fe58353)
 and [Adobe Blank 2](https://github.com/adobe-fonts/adobe-blank-2/tree/46dce06a42de9230bd96e0c9dffe9b3d40a7a0de), which are included as submodules.
