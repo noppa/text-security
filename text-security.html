@@ -11,253 +11,93 @@
   <style>
     html {
       font-size: 16px;
-      min-height: 100%;
-      position: relative;
     }
+
     body {
       font-family: Arial;
       text-align: center;
       background: #fff;
       color: #111;
-      margin: 0px;
-      padding: 0px;
-      /* Hacky solution to make the dropping balls visible after the
-        absolutely positioned main-element ends. */
-      min-height: 90rem;
     }
-    header {
-      padding: 20px 10px 100px 10px;
-      background: #111;
-      color: #fff;
-      min-height: 50vh;
-      background: #111;
-      text-align: center;
-    }
-    main {
-      padding: 4rem 0rem;
-      margin-top: 2rem;
-      margin-bottom: 200px;
-      background: #fff;
-      position: absolute;
-      z-index: 110;
-      left: 0;
-      width: 100%;
-      box-shadow: 0px 0px 37px 0px rgba(0,0,0,0.75);
-      border-top: 4px solid #111;
-      border-bottom: 4px solid #111;
-    }
-    .content-wrap {
-      display: inline-block;
-    }
+
     td {
       text-align: center;
       padding: 20px;
     }
+
     small {
-      font-size: 0.6em;
+      font-size: 0.8em;
       font-weight: normal;
       color: rgb(49, 49, 49);
     }
-    h1 {
-      font-size: 5rem;
-    }
-    h2 {
-      font-size: 1.2rem;
-      margin-top: 4rem;
-    }
-    header h2 {
-      margin-top: -2rem;
-    }
-    h3 {
-      font-size: 1rem;
-      font-weight: normal;
-      line-height: 150%;
-    }
-    a {
-      color: inherit;
-      text-decoration: underline;
-      text-decoration-style: dotted;
-    }
-
-    .example {
-      margin: 2rem;
-      padding: 0.8rem;
-      font-size: 0.8rem;
-      max-width: 800px;
-      text-align: left;
-      display: inline-block;
-      line-height: 180%;
-    }
-
-    code .token {
-      color: #fff;
-    }
-    code .tag, .attr-eq {
-      color: #ff5555;
-    }
-    code .attr {
-      color: #50fa7b;
-    }
-    code .string {
-      color: #f1fa8c;
-    }
-
-    main code {
-      font-size: 0.9rem;
-    }
-
-    .bg-disc {
-      font-size: 20rem;
-      position: absolute;
-      display: inline-block;
-      top: -20rem;
-      font-family: text-security-disc;
-      color: white;
-      mix-blend-mode: difference;
-      animation: dropping-disc 10s infinite;
-    }
-
-    .bg-wrap {
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      overflow: hidden;
-      position: absolute;
-      pointer-events: none;
-    }
-
-    @keyframes dropping-disc {
-      to {
-        top: 110%;
-      }
-    }
   </style>
 
-  <header>
-    <h1>text-security</h1>
-    <h2>Conceal user input with <i>style</i>.</h2>
-    <div class="example">
-      <code>
-        <span class="token">&lt;</span><span class="tag">link</span>
-        <span class="attr">href</span><span class="attr-eq">=</span><span class="string">&quot;text-security.css&quot;</span>
-        <span class="attr">rel</span><span class="attr-eq">=</span><span class="string">&quot;stylesheet&quot;</span>
-        <span class="attr">type</span><span class="attr-eq">=</span><span class="string">&quot;text/css&quot;</span>
-        <span class="token">/&gt;</span>
-
-        <br />
-        
-        <span class="token">&lt;</span><span class="tag">input</span>
-        <span class="attr">type</span><span class="attr-eq">=</span><span class="string">&quot;tel&quot;</span>
-        <span class="attr">style</span><span class="attr-eq">=</span><span class="string">&quot;font-family: text-security-disc;&quot;</span>
-        <span class="token">/&gt;</span>
-      </code>
-    </div>
-
-    <h3>
-      Special font for "polyfilling"
-      <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-text-security">-webkit-text-security</a>,<br />
-      in all browsers, for any input you can think of.
-    </h3>
-  </header>
-
-  <div class="bg-wrap">
-    <div class="bg-disc" style="left: 0%; animation-delay: 3s; animation-duration: 10s;">t</div>
-    <div class="bg-disc" style="left: 7%; animation-delay: 1s; animation-duration: 9s;">e</div>
-    <div class="bg-disc" style="left: 14%; animation-delay: 10s; animation-duration: 12s;">x</div>
-    <div class="bg-disc" style="left: 21%; animation-delay: 6s; animation-duration: 13s;">t</div>
-    <div class="bg-disc" style="left: 28%; animation-delay: 5s; animation-duration: 16s;">t</div>
-    <div class="bg-disc" style="left: 35%; animation-delay: 8s; animation-duration: 8s;">-</div>
-    <div class="bg-disc" style="left: 42%; animation-delay: 0s; animation-duration: 15s;">e</div>
-    <div class="bg-disc" style="left: 49%; animation-delay: 9s; animation-duration: 14s;">c</div>
-    <div class="bg-disc" style="left: 56%; animation-delay: 14s; animation-duration: 18s;">u</div>
-    <div class="bg-disc" style="left: 63%; animation-delay: 7s; animation-duration: 17s;">r</div>
-    <div class="bg-disc" style="left: 70%; animation-delay: 2s; animation-duration: 13s;">i</div>
-    <div class="bg-disc" style="left: 77%; animation-delay: 11s; animation-duration: 12s;">t</div>
-    <div class="bg-disc" style="left: 84%; animation-delay: 4s; animation-duration: 10s;">y</div>
-  </div>
-
   <main>
-    <div class="content-wrap">
-      <table>
-        <thead>
-          <tr>
-            <th>shape</th>
-            <th>
-              text-securty font
-            </th>
-            <th>
-              -webkit-text-security<br/>
-              <small>(only works in WebKit-based browsers, like Chrome)</small>
-            </th>
-            <th>
-              password field
-            </th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>
-              disc<br/>
-              <small>(the usual password field shape)</small>
-            </td>
-            <td>
-              <input type="text" style="font-family: text-security-disc;" value="🕵️ foo [某" />
-            </td>
-            <td>
-              <input type="text" style="-webkit-text-security: disc;" value="🕵️ foo [某" />
-            </td>
-            <td>
-              <input type="password" value="🕵️ foo [某" />
-            </td>
-          </tr>
-          <tr>
-            <td>
-              circle
-            </td>
-            <td>
-              <input type="text" style="font-family: text-security-circle;" value="🕵️ foo [某" />
-            </td>
-            <td>
-              <input type="text" style="-webkit-text-security: circle;" value="🕵️ foo [某" />
-            </td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>
-              square
-            </td>
-            <td>
-              <input type="text" style="font-family: text-security-square;" value="🕵️ foo [某" />
-            </td>
-            <td>
-              <input type="text" style="-webkit-text-security: square;" value="🕵️ foo [某" />
-            </td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-  
-      <h2>Installation</h2>
-      <code>
-        npm install text-security
-      </code>
-      <p>
-        or download fonts from GitHub releases page.
-      </p>
-      <p>
-        Include one of the pregenerated css files or use
-        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face">@font-face</a>
-        to manually load the fonts you need (most likely text-security-disc).
-      </p>
-      <h2>License</h2>
-      <p>
-        <a href="https://opensource.org/licenses/OFL-1.1">SIL Open font lisence</a>
-      </p>
+    <table>
+      <thead>
+        <tr>
+          <th>shape</th>
+          <th>
+            text-securty font
+          </th>
+          <th>
+            -webkit-text-security*
+          </th>
+          <th>
+            password field
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            disc
+          </td>
+          <td>
+            <input type="text" style="font-family: text-security-disc;" value="🕵️ foo [某" />
+          </td>
+          <td>
+            <input type="text" style="-webkit-text-security: disc;" value="🕵️ foo [某" />
+          </td>
+          <td>
+            <input type="password" value="🕵️ foo [某" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            circle
+          </td>
+          <td>
+            <input type="text" style="font-family: text-security-circle;" value="🕵️ foo [某" />
+          </td>
+          <td>
+            <input type="text" style="-webkit-text-security: circle;" value="🕵️ foo [某" />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            square
+          </td>
+          <td>
+            <input type="text" style="font-family: text-security-square;" value="🕵️ foo [某" />
+          </td>
+          <td>
+            <input type="text" style="-webkit-text-security: square;" value="🕵️ foo [某" />
+          </td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="text-align: left; margin: 4rem;">
+      <small>
+        * The non-standard
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-text-security">-webkit-text-security</a>
+        CSS property only works in WebKit-based browsers, like Chrome. Safari only seems to support the disc shape.
+      </small>
     </div>
   </main>
-
-
 </body>
 
 </html>
