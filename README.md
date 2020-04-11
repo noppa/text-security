@@ -1,4 +1,7 @@
 # text-security
+
+![text-security banner](assets/banner.png)
+
 Cross-browser alternative to [`-webkit-text-security`](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-text-security).
 
 Check out demo at [noppa.github.io/text-security.html](noppa.github.io/text-security.html).
