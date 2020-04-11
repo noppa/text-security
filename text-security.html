@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>text-security font demo</title>
+  <link href="output/text-security.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <style>
+    html {
+      font-size: 16px;
+    }
+
+    body {
+      font-family: Arial;
+      text-align: center;
+      background: #fff;
+      color: #111;
+    }
+
+    td {
+      text-align: center;
+      padding: 20px;
+    }
+
+    small {
+      font-size: 0.8em;
+      font-weight: normal;
+      color: rgb(49, 49, 49);
+    }
+  </style>
+
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>shape</th>
+          <th>
+            text-securty font
+          </th>
+          <th>
+            -webkit-text-security*
+          </th>
+          <th>
+            password field
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            disc
+          </td>
+          <td>
+            <input type="text" style="font-family: text-security-disc;" value="🕵️ foo [某" />
+          </td>
+          <td>
+            <input type="text" style="-webkit-text-security: disc;" value="🕵️ foo [某" />
+          </td>
+          <td>
+            <input type="password" value="🕵️ foo [某" />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            circle
+          </td>
+          <td>
+            <input type="text" style="font-family: text-security-circle;" value="🕵️ foo [某" />
+          </td>
+          <td>
+            <input type="text" style="-webkit-text-security: circle;" value="🕵️ foo [某" />
+          </td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            square
+          </td>
+          <td>
+            <input type="text" style="font-family: text-security-square;" value="🕵️ foo [某" />
+          </td>
+          <td>
+            <input type="text" style="-webkit-text-security: square;" value="🕵️ foo [某" />
+          </td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="text-align: left; margin: 4rem;">
+      <small>
+        * The non-standard
+        <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-text-security">-webkit-text-security</a>
+        CSS property only works in WebKit-based browsers, like Chrome. Safari only seems to support the disc shape.
+      </small>
+    </div>
+  </main>
+</body>
+
+</html>

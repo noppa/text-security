@@ -1,0 +1,31 @@
+0 400 hsbw
+-120 50 hstem
+400 50 hstem
+100 50 vstem
+400 50 vstem
+80 380 rmoveto
+
+% See https://learn.scannerlicker.net/2014/04/16/bezier-curves-and-type-design-a-tutorial/
+% https://stackoverflow.com/questions/1734745/how-to-create-circle-with-b%C3%A9zier-curves
+% And especially https://i.stack.imgur.com/aEsuA.png
+% Our goal here is to draw a circle using cubic curves, moving clockwise and
+% starting from the left side anchor point. If the size of the circle would be 1,
+% the starting point would be the at x=0, y=0.5.
+
+% We have 4 anchor points and between each there are 2 control points.
+% On each line, our goal is two specify points for the two control points
+% between current poistion and next anchor point, and then move to next anchor point.
+% First two numbers describe position of first control point, relative
+% to the current position we were left off in previous line.
+% The second two numbers describe the second "control point" position,
+% relative to the position of the first control point. The last two point to
+% the actual next anchor point, relative to the second control point.
+
+% Size of the circle is 280.
+% Each anchor point is 280/2=140 points apart from previous in both x and y axis.
+% First control point is 140*(1-0.552284749831)≃63 points from the previous anchor point.
+
+0 76 63 63 76 0 rrcurveto
+76 0 63 -63 0 -76 rrcurveto
+0 -76 -63 -63 -76 0 rrcurveto
+-76 0 -63 63 0 76 rrcurveto
