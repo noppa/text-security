@@ -18,7 +18,7 @@ Firefox, Safari for iOS and IE 11. Opera Mini is **not** supported, as it
 
 Modern browsers that support WOFF2 and
 [cmap subtable format 12](https://docs.microsoft.com/en-us/typography/opentype/spec/cmap#format-12-segmented-coverage) will use the optimized WOFF2 font, which is only **0.8 kb** in size.
-Older browsers like IE will automatically load the compatibility TTF and EOT fonts
+Older browsers like IE will automatically load the compatibility TTF or EOT fonts
 whose names are suffixed "-compat" and weigh about 200 kb.
 
 The project builds on top of Adobe's similar font projects [Adobe Notdef](https://github.com/adobe-fonts/adobe-notdef/tree/1f1f863b2295543598b69bebe42db3e73fe58353)
