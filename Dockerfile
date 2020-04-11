@@ -7,7 +7,6 @@ RUN apk add build-base g++ libxslt-dev libxml2 autoconf automake woff2
 # Copy submodule dependencies to container.
 COPY ./t1utils /t1utils
 COPY ./ttf2eot /ttf2eot
-COPY ./adobe-blank /adobe-blank
 COPY ./adobe-blank-2 /adobe-blank-2
 COPY ./adobe-notdef /adobe-notdef
 
