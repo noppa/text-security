@@ -32,15 +32,15 @@ Some warnings are expected and OK, as long as the process ends with message like
 
 ## Modifying and adding new shapes
 The shape files live in `src/shapes`. They are defined using [Adobe Type 1 Font Format](https://www.adobe.com/content/dam/acom/en/devnet/font/pdfs/T1_SPEC.pdf),
-which similar to what OpenType uses.
+which is similar to what OpenType uses.
 I know it's not exactly the easiest and most familiar format to specify shapes,
 but that's what's consumed by the Adobe font tools that this project uses, so we'll just have to live with it.  
 [disc.ps](src/shapes/disc.ps) and [circle.ps](src/shapes/circle.ps) have
 some comments that might give you a good starting point to your own shapes.
 
 ## Watch mode
-Developing a shape will likely involve lots of trial and error, so it's could be useful
-if you didn't have to run the build command manually after every change.
+Developing a shape will likely involve lots of trial and error, which is easier
+if you don't have to run the build command manually after every change.
 
 Building the fonts with
 ```sh
