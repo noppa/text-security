@@ -1,6 +1,6 @@
 ![text-security](assets/banner.png)
 
-Cross-browser alternative to [`-webkit-text-security`](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-text-security). Check out demo at [noppa.github.io/text-security.html](noppa.github.io/text-security.html).
+Cross-browser alternative to [`-webkit-text-security`](https://developer.mozilla.org/en-US/docs/Web/CSS/-webkit-text-security). Check out demo at [noppa.github.io/text-security.html](https://noppa.github.io/text-security.html).
 
 text-security is a simple set of fonts that only consist of 3 different characters.
 Disc (the shape normally used in password fields), circle and square. For example, setting
