@@ -8,6 +8,7 @@
     "prepublishOnly": "cp ./output/* .",
     "postpublish": "git clean -fd"
   },
+  "keywords": ["-webkit-text-security", "conceal", "hide", "dots", "password"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/noppa/text-security.git"
