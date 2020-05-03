@@ -30,7 +30,7 @@ whose names are suffixed "-compat" and weigh about 200 kb.
 The optimized non-compatibility woff2 font does not currently work correctly in Safari.
 See [issue #10](https://github.com/noppa/text-security/issues/10).  
 Safari does however support `-webkit-text-security: disc;`, but only for the `disc` shape and not the others.  
-The setup described above should therefore work fine if all you need is the disc shape
+The setup described in [CSS example](#css-example) should therefore work fine if all you need is the disc shape
 (which is what normal password fields use), because Safari will conceal the field
 based on `-webkit-text-security` property and doesn't even need to load the font.  
 If you want to use some other shape, leave out the `-webkit-text-security: disc;`
