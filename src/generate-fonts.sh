@@ -24,7 +24,7 @@ woff2_compress /tmp/text-security-$shape.ttf
 mv /tmp/text-security-$shape.woff2 /output/
 
 # Clean up files that were generated here (but not those that were generated in generate-fonts.py)
-rm /tmp/$shape-cidfont /tmp/$shape-font.pfa /tmp/text-security-$shape.otf
+rm /tmp/$shape-cidfont /tmp/$shape-font.pfa /tmp/text-security-$shape.otf /tmp/text-security-$shape.ttf
 
 echo "Font file output/text-security-$shape.woff2 generated"
 
@@ -55,6 +55,8 @@ rm -f /tmp/text-security-$shape.ttf
 otf2ttf /tmp/text-security-$shape.otf
 sfntedit -d DSIG /tmp/text-security-$shape.ttf
 /ttf2eot/ttf2eot < /tmp/text-security-$shape.ttf > /output/text-security-$shape-compat.eot
+woff2_compress /tmp/text-security-$shape.ttf
+mv /tmp/text-security-$shape.woff2 /output/text-security-$shape-compat.woff2
 mv /tmp/text-security-$shape.ttf /output/text-security-$shape-compat.ttf
 
 rm /tmp/$shape-cidfont /tmp/$shape-font.pfa /tmp/text-security-$shape.otf

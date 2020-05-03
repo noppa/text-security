@@ -42,7 +42,16 @@ def build_all():
   for shape_file in shape_files:
     shape_name = get_shape_name(shape_file)
     font_name = f"text-security-{shape_name}"
-    shape_css = css_template.replace("text-security", f"text-security-{shape_name}")
+    shape_css = css_template
+
+    if shape_name != "disc":
+      # Mitigation for issue #10
+      # The non-compatibility woff2 font causes weird behaviour in Safari for other
+      # shapes than disc (because disc can be done with -webkit-text-security)
+      shape_css = shape_css.replace("text-security.", "text-security-compat.")
+
+    shape_css = shape_css.replace("text-security", f"text-security-{shape_name}")
+
     css_file_contents.append(shape_css)
     Path(f"/output/text-security-{shape_name}.css").write_text(cssmin.cssmin(shape_css))
     # Replace font name in font configuration files
