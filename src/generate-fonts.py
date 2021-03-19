@@ -36,6 +36,13 @@ def generate_font_for_shape(shape_file, skip_compatibility_fonts=False):
   extra_arg = "--no-compat" if skip_compatibility_fonts else ""
   subprocess.call(["/src/generate-fonts.sh", shape_name, extra_arg])
 
+def minify_css(css):
+  minified = cssmin.cssmin(css)
+  # There's a bug in cssmin that converts `not (foo)` to `not(foo)`
+  # in @support query, which is not the same. Hacky find & replace
+  # should be good enough for us.
+  return minified.replace("not(", "not (")
+
 def build_all():
   css_file_contents = []
 
@@ -43,17 +50,10 @@ def build_all():
     shape_name = get_shape_name(shape_file)
     font_name = f"text-security-{shape_name}"
     shape_css = css_template
-
-    if shape_name != "disc":
-      # Mitigation for issue #10
-      # The non-compatibility woff2 font causes weird behaviour in Safari for other
-      # shapes than disc (because disc can be done with -webkit-text-security)
-      shape_css = shape_css.replace("text-security.", "text-security-compat.")
-
     shape_css = shape_css.replace("text-security", f"text-security-{shape_name}")
 
     css_file_contents.append(shape_css)
-    Path(f"/output/text-security-{shape_name}.css").write_text(cssmin.cssmin(shape_css))
+    Path(f"/output/text-security-{shape_name}.css").write_text(minify_css(shape_css))
     # Replace font name in font configuration files
     for config_file in config_files:
       config = Path(f"/src/font-config/{config_file}").read_text()
@@ -62,7 +62,7 @@ def build_all():
     
     generate_font_for_shape(shape_file)
 
-  Path("/output/text-security.css").write_text(cssmin.cssmin("\n".join(css_file_contents)))
+  Path("/output/text-security.css").write_text(minify_css("\n".join(css_file_contents)))
 
 
 # Really simple polling-based watch mode implementation.
