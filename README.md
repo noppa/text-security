@@ -15,29 +15,27 @@ question](https://stackoverflow.com/questions/36935576/how-to-make-input-type-te
 The project builds on top of Adobe's similar font projects [Adobe Notdef](https://github.com/adobe-fonts/adobe-notdef/tree/1f1f863b2295543598b69bebe42db3e73fe58353)
 and [Adobe Blank 2](https://github.com/adobe-fonts/adobe-blank-2/tree/46dce06a42de9230bd96e0c9dffe9b3d40a7a0de).
 
+## Disclaimer
+If you are considering this library to replace a password field with a text
+field—perhaps to avoid browsers' autofill behavior—please think twice before
+doing so. Browsers might offer enhanced security features for password
+fields, like limiting which scripts are allowed to read their values. Opting
+to use a text field instead will leave your app out of these protections.
+There are also accessibility issues with this solution, see [issue 11](https://github.com/noppa/text-security/issues/11).
+This font simply masks text like a password field would and does not further
+protect the input. There are legitimate use cases where that's ok (think OTP
+fields, SSN inputs, etc.), and then there are use cases where it's just not
+worth it.
 
 ## Browser support
 Tested in recent versions of Chrome (for desktop and mobile), Edge,
 Firefox, Safari for iOS and IE 11. Opera Mini is **not** supported, as it
 [does not support](https://caniuse.com/#feat=fontface) `@font-face` web fonts.
 
-Modern browsers that support WOFF2 and
-[cmap subtable format 13](https://docs.microsoft.com/en-us/typography/opentype/spec/cmap#format-13-many-to-one-range-mappings) will use the optimized WOFF2 font, which is only **0.8 kb** in size.
-Older browsers like IE will automatically load the compatibility TTF or EOT fonts
+Chrome and Firefox, which support WOFF2 and
+[cmap subtable format 13](https://docs.microsoft.com/en-us/typography/opentype/spec/cmap#format-13-many-to-one-range-mappings), will use the optimized WOFF2 font, which is only **0.8 kb** in size.
+Older browsers like IE will automatically load the compatibility fonts
 whose names are suffixed "-compat" and weigh about 200 kb.
-
-### Note about Safari support
-The optimized non-compatibility woff2 font does not currently work correctly in Safari.
-See [issue #10](https://github.com/noppa/text-security/issues/10).  
-Safari does however support `-webkit-text-security: disc;`, but only for the `disc` shape and not the others.  
-The setup described in [CSS example](#css-example) should therefore work fine if all you need is the disc shape
-(which is what normal password fields use), because Safari will conceal the field
-based on `-webkit-text-security` property and doesn't even need to load the font.  
-If you want to use some other shape, leave out the `-webkit-text-security: disc;`
-rule from your CSS and make sure the `@font-face` definition that you
-are using (coming either from the released prebuilt CSS files or from your
-own custom CSS `@font-face` definition) loads the "-compat" suffixed files
-even for woff2 version.
 
 ## Installation
 ```sh
