@@ -1,12 +1,6 @@
 @font-face {
   font-family: 'text-security';
   src: url('text-security-compat.eot');
-  /*
-   Hack to prevent Firefox from loading the compatibility fonts.
-   Without this, ff will download both compatibility and optimized fonts
-   even though only the optimized version is needed. Bug in ff?
-  */
-  font-style: oblique;
   src: url('text-security-compat.eot?#iefix') format('embedded-opentype'),
       url('text-security-compat.woff2') format('woff2'),
       url('text-security-compat.ttf') format('truetype');
@@ -20,9 +14,10 @@
   -moz-is-html only lets Firefox through
   -webkit-hyphens explicitly excludes Safari in case they later add support for content-visibility
 */
-@supports ((content-visibility: visible) or selector(:-moz-is-html)) and (not (-webkit-hyphens:none)) {
+@supports ((content-visibility: visible) or selector(:-moz-is-html)) and (not (-webkit-hyphens: none)) {
   @font-face {
     font-family: 'text-security';
-    src: url('text-security.woff2') format('woff2'), url('text-security-compat.ttf') format('truetype');
+    src: url('text-security.woff2') format('woff2'),
+      url('text-security-compat.ttf') format('truetype');
   }
 }
