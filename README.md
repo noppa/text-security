@@ -4,7 +4,7 @@ Cross-browser alternative to [`-webkit-text-security`](https://developer.mozilla
 
 text-security is a simple set of fonts that only consist of 3 different characters.
 Disc (the shape normally used in password fields), circle and square. For example, setting
-`font-family: "text-security-circle"` for
+`font-family: "text-security-disc"` for
 an element should then display all the element's characters in a concealed
 way, like it was a password field. This is useful if you want to get the benefits of `input[type="password"]`
 but also combine that with other element types, like `input[type="tel"]`. In
