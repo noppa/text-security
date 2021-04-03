@@ -41,7 +41,7 @@ def minify_css(css):
   # There's a bug in cssmin that converts `not (foo)` to `not(foo)`
   # in @support query, which is not the same. Hacky find & replace
   # should be good enough for us.
-  return minified.replace("not(", "not (")
+  return minified.replace("not(", "not (").replace(" or(", " or (")
 
 def build_all():
   css_file_contents = []
