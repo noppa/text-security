@@ -1,6 +1,6 @@
 {
   "name": "text-security",
-  "version": "3.2.0",
+  "version": "3.2.1",
   "description": "Cross-browser alternative to -webkit-text-security",
   "main": "text-security.css",
   "scripts": {
